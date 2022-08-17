@@ -6,7 +6,7 @@
 /*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 12:22:32 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/11 22:21:46 by mait-aad         ###   ########.fr       */
+/*   Updated: 2022/08/17 13:39:01 by mait-aad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void		mod_env(char	**pwds);
 char		**add(char *s2);
 char		*ft_export(char **in);
 char		*ft_echo(char	**inputs, int newlin);
-void		add_to_a_file(char	*file);
-void		create_and_to_a_file(char	*file);
+int			add_to_a_file(char	*file);
+int			create_and_to_a_file(char	*file);
 char		*ft_strjoin(char	*s1, char	*s2);
 char		*ft_substr(char const *s, int start, int len);
 char		**ft_split(char const *s, char c);

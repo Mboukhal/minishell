@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_exec.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 04:02:53 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/14 18:00:47 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/17 13:57:54 by mait-aad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,6 @@ int	is_eqoul_e(char	*s1, char	*s2)
 	return (1);
 }
 
-int	count(char **data)
-{
-	int		i;
-
-	i = -1;
-	while (data[++i])
-		;
-	return (i);
-}
-
 void	free_tmp(char	**cmd, int i)
 {
 	char	*tmp;
@@ -57,10 +47,31 @@ void	free_tmp(char	**cmd, int i)
 	cmd[i] = NULL;
 }
 
+int	check_file(char *file)
+{
+	if (access(file, W_OK) == -1 && access(file, F_OK) == 0)
+	{
+		g_data.ret_val = 1;
+		ft_putstr_fd("minishell: ", 2);
+		ft_putstr_fd(file, 2);
+		ft_putendl_fd(": Permission denied", 2);
+		return (-1);
+	}
+	return (1);
+}
+
+void	open_and_dup(char	*file)
+{
+	int	fd2;
+
+	fd2 = open(file, O_RDWR);
+	dup2(fd2, 0);
+	close(fd2);
+}
+
 int	herdoc_handel2(char	**cmd, int i)
 {
 	int		fd[2];
-	int		fd2;
 
 	if (cmd[i][0] == '<' && cmd[i][1] == '<')
 	{
@@ -75,11 +86,14 @@ int	herdoc_handel2(char	**cmd, int i)
 	}
 	else if (cmd[i][0] == '<' && cmd[i][1] != '<')
 	{
-		fd2 = open(cmd[i + 1], O_RDWR);
-		dup2(fd2, 0);
-		close(fd2);
-		free_tmp(cmd, i);
-		return (1);
+		if (check_file(cmd[i + 1]) == 1)
+		{
+			open_and_dup(cmd[i + 1]);
+			free_tmp(cmd, i);
+			return (1);
+		}
+		else
+			return (-1);
 	}
 	return (0);
 }

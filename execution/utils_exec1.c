@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   echo.c                                             :+:      :+:    :+:   */
+/*   utils_exec1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/30 16:42:48 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/17 13:30:42 by mait-aad         ###   ########.fr       */
+/*   Created: 2022/08/17 13:52:32 by mait-aad          #+#    #+#             */
+/*   Updated: 2022/08/17 13:53:11 by mait-aad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "func.h"
+#include "ft_exec.h"
 
-char	*ft_echo(char	**inputs, int newlin)
+int	count(char **data)
 {
 	int		i;
-	char	*out;
 
 	i = -1;
-	out = NULL;
-	while (inputs[++i])
-		printf("%s", inputs[i]);
-	if (newlin == 0)
-		return (0);
-	printf("\n");
-	return (NULL);
+	while (data[++i])
+		;
+	return (i);
 }

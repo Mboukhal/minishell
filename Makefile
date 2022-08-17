@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+         #
+#    By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/24 18:54:34 by mboukhal          #+#    #+#              #
-#    Updated: 2022/08/16 17:06:14 by mboukhal         ###   ########.fr        #
+#    Updated: 2022/08/17 13:53:31 by mait-aad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC 			= $(DIR_FUNC)add_and_or_create_to_afile.c $(DIR_FUNC)cd.c \
 					$(DIR_FUNC)ft_strjoin.c $(DIR_FUNC)ft_strdup.c \
 					$(DIR_FUNC)ft_substr.c $(DIR_EXEC)ft_exec.c $(DIR_FUNC)others.c \
 					$(DIR_EXEC)pipes.c $(DIR_FUNC)exit.c $(DIR_FUNC)err_exe.c \
-					$(DIR_FUNC)ft_getenv.c $(DIR_EXEC)utils_exec.c \
+					$(DIR_FUNC)ft_getenv.c $(DIR_EXEC)utils_exec.c $(DIR_EXEC)utils_exec1.c \
 					main.c utils.c
 
 LIB 			= $(DIR_PARC)minishell_parcer.a 

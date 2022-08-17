@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:47:42 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/09 15:42:06 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/17 13:19:29 by mait-aad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,20 @@ void	get_dir(char	*dir)
 {
 	int	i;
 
+	if (access(dir, F_OK) == 0)
+	{
+		g_data.ret_val = 1;
+		ft_putstr_fd("minishell: ", 2);
+		ft_putstr_fd(dir, 2);
+		ft_putendl_fd(": Permission denied", 2);
+		return ;
+	}
 	i = chdir(dir);
 	if (i == -1)
 	{
-		printf("cd: no such file or directory: %s\n", dir);
+		g_data.ret_val = 1;
+		ft_putstr_fd("cd: no such file or directory: ", 2);
+		ft_putendl_fd(dir, 2);
 		return ;
 	}
 }
