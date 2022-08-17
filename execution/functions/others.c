@@ -6,7 +6,7 @@
 /*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 17:52:03 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/15 16:32:15 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/17 15:01:49 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static int	ft_isnum(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+unsigned long long	ft_atoi(const char *str)
 {
-	unsigned long int	result;
+	unsigned long long 	result;
 	int					signe;
 
 	signe = 1;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:47:42 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/17 13:19:29 by mait-aad         ###   ########.fr       */
+/*   Updated: 2022/08/17 14:26:12 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	get_dir(char	*dir)
 {
 	int	i;
 
-	if (access(dir, F_OK) == 0)
+	if (access(dir, R_OK | W_OK))
 	{
 		g_data.ret_val = 1;
 		ft_putstr_fd("minishell: ", 2);

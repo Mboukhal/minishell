@@ -6,7 +6,7 @@
 /*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:36:06 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/06 18:28:26 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/17 15:02:26 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	cheak_exit_val(char	*cmd)
 {
-	int	res;
+	unsigned long long	res;
 	int	i;
 
 	i = -1;
@@ -23,7 +23,7 @@ static int	cheak_exit_val(char	*cmd)
 	if (!cmd[i])
 		return (0);
 	res = ft_atoi(cmd);
-	if (!res)
+	if (!res || res > LONG_LONG_MAX)
 	{
 		ft_putstr_fd("minishell: exit: ", 2);
 		ft_putstr_fd(cmd, 2);

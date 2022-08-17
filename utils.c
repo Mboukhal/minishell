@@ -6,7 +6,7 @@
 /*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 22:05:08 by mboukhal          #+#    #+#             */
-/*   Updated: 2022/08/16 13:03:31 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/17 14:40:15 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,16 @@ void	sig_handler(int sig)
 {
 	if (sig == SIGINT)
 	{
-		g_data.ret_val = 1;
+		g_data.ret_val = 130;
 		rl_catch_signals = 0;
 		ft_putchar_fd('\n', 1);
 		rl_on_new_line();
 		rl_replace_line("", 0);
 		if (!g_data.in_process)
+		{
+			g_data.ret_val = 1;
 			rl_redisplay();
+		}
 	}
 	else if (sig == SIGQUIT)
 	{

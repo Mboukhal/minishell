@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exec.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 18:23:38 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/17 13:57:45 by mait-aad         ###   ########.fr       */
+/*   Updated: 2022/08/17 14:43:10 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ void	ft_exec(char	**cmd)
 		if (i == 0)
 			other (cmd);
 		waitpid(i, &st, 0);
-		if (!g_data.in_process)
+		if (!g_data.in_process || WEXITSTATUS(st))
 			g_data.ret_val = WEXITSTATUS(st);
 	}
 	dup2(fd[0], 0);
