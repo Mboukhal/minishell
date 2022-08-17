@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   others.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 17:52:03 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/17 15:01:49 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:10:59 by mait-aad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_isnum(int c)
 
 unsigned long long	ft_atoi(const char *str)
 {
-	unsigned long long 	result;
+	unsigned long long	result;
 	int					signe;
 
 	signe = 1;

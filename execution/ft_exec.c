@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exec.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 18:23:38 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/17 14:43:10 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:07:44 by mait-aad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,19 +87,19 @@ int	bul(char	**cmd)
 		ft_putendl_fd("Minishell: : command not found", 2);
 		g_data.ret_val = 127;
 	}
-	else if (is_eqoul_e("echo", cmd[0]))
+	else if (is_eqoul_bul("echo", cmd[0]))
 		handl_echo(cmd);
-	else if (is_eqoul_e("cd", cmd[0]))
+	else if (is_eqoul_bul("cd", cmd[0]))
 		ft_cd(cmd[1]);
-	else if (is_eqoul_e("pwd", cmd[0]))
+	else if (is_eqoul_bul("pwd", cmd[0]))
 		ft_pwd();
-	else if (is_eqoul_e("exit", cmd[0]))
+	else if (is_eqoul_bul("exit", cmd[0]))
 		check_ff(cmd);
-	else if (is_eqoul_e("export", cmd[0]))
+	else if (is_eqoul_bul("export", cmd[0]))
 		ft_export(cmd +1);
-	else if (is_eqoul_e("unset", cmd[0]))
+	else if (is_eqoul_bul("unset", cmd[0]))
 		ft_unset(cmd + 1);
-	else if (is_eqoul_e("env", cmd[0]))
+	else if (is_eqoul_bul("env", cmd[0]))
 		ft_print_env();
 	else
 		return (0);

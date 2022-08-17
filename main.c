@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 19:31:14 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/17 14:44:15 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/17 16:56:42 by mait-aad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ int	main(int ac, char **av, char **env)
 	rl_catch_signals = 0;
 	signal(SIGQUIT, SIG_IGN);
 	init_global(env);
+	g_data.pwd = ft_getenv("PWD");
 	while (loop())
 		;
 	printf("\e[F%sexit\n", PS1);

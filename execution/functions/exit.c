@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:36:06 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/17 15:02:26 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:10:44 by mait-aad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	cheak_exit_val(char	*cmd)
 {
 	unsigned long long	res;
-	int	i;
+	int					i;
 
 	i = -1;
 	while (cmd[++i] == '0')

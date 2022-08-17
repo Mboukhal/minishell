@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 22:05:08 by mboukhal          #+#    #+#             */
-/*   Updated: 2022/08/17 14:40:15 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/17 16:54:03 by mait-aad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	init_global(char	**e)
 	int	i;
 	int	j;
 
-	g_data.pwd = getenv("PWD");
 	g_data.pid = getpid();
 	g_data.in_pipe = 0;
 	i = -1;
