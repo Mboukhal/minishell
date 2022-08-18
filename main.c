@@ -6,7 +6,7 @@
 /*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 19:31:14 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/18 13:13:35 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/18 14:21:49 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,16 @@ static int	check_spase(char *s)
 	return (0);
 }
 
+	// char	*v_promt;
+	// v_promt = prompt();
+	// free(v_promt);
 static int	loop(void)
 {
 	char	*s;
-	char	*v_promt;
 
 	signal(SIGINT, sig_handler);
 	s = NULL;
-	v_promt = prompt();
-	s = readline(v_promt);
-	free(v_promt);
+	s = readline(PS1);
 	if (s)
 	{
 		if (*s && check_spase(s))
@@ -114,8 +114,6 @@ int	main(int ac, char **av, char **env)
 	g_data.pwd = ft_getenv("PWD");
 	while (loop())
 		;
-	v_promt = prompt();
-	printf("\e[F%sexit\n", v_promt);
-	free(v_promt);
+	printf("\e[F%sexit\n");
 	return (g_data.ret_val);
 }
