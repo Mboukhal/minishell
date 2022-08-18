@@ -6,7 +6,7 @@
 /*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 22:42:48 by mboukhal          #+#    #+#             */
-/*   Updated: 2022/08/11 14:12:28 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/18 14:20:18 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ char	*here_collect(char *str, char *prompt, char *s)
 	while (1)
 	{
 		tmp = readline(prompt);
-		if (!tmp || g_data.cc_var)
+		if (g_data.cc_var)
 		{
 			free(tmp);
 			*str = 0;
 			printf("\e[F\e[2K");
 			return (str);
 		}
-		if ((!ft_strncmp(tmp, s, ui_strlen(s))
+		if (!tmp || (!ft_strncmp(tmp, s, ui_strlen(s))
 				&& ui_strlen(tmp) == ui_strlen(s)))
 			break ;
 		str = my_recat(str, tmp, ui_strlen(str) + ui_strlen(tmp));
