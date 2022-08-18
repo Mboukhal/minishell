@@ -6,7 +6,7 @@
 /*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 14:22:14 by mboukhal          #+#    #+#             */
-/*   Updated: 2022/08/16 16:56:18 by mboukhal         ###   ########.fr       */
+/*   Updated: 2022/08/18 11:26:03 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	last_char_test(t_token *val)
 	// if ((token->e_type == T_QUOT || token->e_type == T_DQUOT)
 	// 	&& lex->last_t == 255)
 	// 	token->e_type = T_PROG;
-	// printf("\t\ttoken1 ([%s], [%d]) [%d]\n", token->val,
-			//  token->e_type, lex->export % 2);
+	// printf("\t\ttoto ([%s]) [%d]\n", token->val, token->e_type);
 char	*cheak_tok(t_token *token, t_lexer *lex, char *str)
 {
 	if (token->e_type == T_PROG && !ft_strncmp("echo", token->val, 5))

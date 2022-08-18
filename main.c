@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 19:31:14 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/17 16:56:42 by mait-aad         ###   ########.fr       */
+/*   Updated: 2022/08/18 13:13:35 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,27 +79,33 @@ static int	check_spase(char *s)
 static int	loop(void)
 {
 	char	*s;
+	char	*v_promt;
 
 	signal(SIGINT, sig_handler);
 	s = NULL;
-	s = readline(PS1);
+	v_promt = prompt();
+	s = readline(v_promt);
+	free(v_promt);
 	if (s)
 	{
 		if (*s && check_spase(s))
+		{
 			exec_condition(init_parser(s,
 					g_data.env, &g_data.ret_val));
-	}
-	else
-	{
+			free(s);
+			return (1);
+		}
 		free(s);
-		return (0);
+		g_data.ret_val = 0;
+		return (1);
 	}
-	free(s);
-	return (1);
+	return (0);
 }
 
 int	main(int ac, char **av, char **env)
 {
+	char	*v_promt;
+
 	(void)ac;
 	(void)av;
 	rl_catch_signals = 0;
@@ -108,6 +114,8 @@ int	main(int ac, char **av, char **env)
 	g_data.pwd = ft_getenv("PWD");
 	while (loop())
 		;
-	printf("\e[F%sexit\n", PS1);
-	return (EXIT_SUCCESS);
+	v_promt = prompt();
+	printf("\e[F%sexit\n", v_promt);
+	free(v_promt);
+	return (g_data.ret_val);
 }

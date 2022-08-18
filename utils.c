@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 22:05:08 by mboukhal          #+#    #+#             */
-/*   Updated: 2022/08/17 16:54:03 by mait-aad         ###   ########.fr       */
+/*   Updated: 2022/08/18 13:00:45 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ void	sig_handler(int sig)
 	{
 		g_data.ret_val = 130;
 		rl_catch_signals = 0;
-		ft_putchar_fd('\n', 1);
-		rl_on_new_line();
-		rl_replace_line("", 0);
+		if (!g_data.in_pipe)
+		{
+			ft_putchar_fd('\n', 1);
+			rl_on_new_line();
+			rl_replace_line("", 0);
+		}
 		if (!g_data.in_process)
 		{
 			g_data.ret_val = 1;

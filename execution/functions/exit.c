@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:36:06 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/17 17:10:44 by mait-aad         ###   ########.fr       */
+/*   Updated: 2022/08/18 13:07:18 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ void	check_for_exit(char **cmd)
 			if (cmd[1])
 			{
 				e = cheak_exit_val(cmd[1]);
-				ft_putstr_fd("exit\n", 2);
+				ft_putstr_fd("exit\n", 1);
 				exit(e);
 			}
 			else
 			{
-				ft_putstr_fd("exit\n", 2);
+				ft_putstr_fd("exit\n", 1);
 				exit(g_data.ret_val);
 			}
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exec.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-aad <mait-aad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mboukhal <mboukhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 14:41:50 by mait-aad          #+#    #+#             */
-/*   Updated: 2022/08/17 17:07:07 by mait-aad         ###   ########.fr       */
+/*   Updated: 2022/08/18 13:11:41 by mboukhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ int						count(char **data);
 int						is_eqoul_bul(char	*s1, char	*s2);
 int						check_ff(char **cmd);
 void					free_tmp(char	**cmd, int i);
+char					*prompt(void);
 
 #endif
